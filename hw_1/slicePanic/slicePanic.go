@@ -1,0 +1,30 @@
+package slicePanic
+
+import (
+	"fmt"
+	"log"
+	"time"
+)
+
+type ErrorTexTime struct {
+	text string
+	time string
+}
+
+func RunPanic(index int) {
+
+	defer func() { //catch error - out of range
+
+		if err := recover(); err != nil {
+			var inf ErrorTexTime
+			inf.time = time.Now().Format(time.RFC3339)
+			inf.text = "slice - out of range"
+			log.Println("panic found:", inf.text, ":", inf.time)
+		}
+
+	}()
+
+	slice := []int{1}
+	fmt.Println(slice[index])
+
+}
