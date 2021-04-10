@@ -8,13 +8,13 @@ import (
 
 func main() {
 
-	//out of range
+	//1. panic - out of range
 	slicePanic.RunPanic(10)
 	fmt.Println("Program continue...")
 
 	slicePanic.RunPanic(0)
 	fmt.Println("Program continue...")
 
-	//сreate 1 000 000 files
+	//2. сreate 1 000 000 files
 	createFiles.Newfiles()
 }
