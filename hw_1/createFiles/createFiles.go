@@ -15,7 +15,7 @@ func Newfiles() {
 			file, err := os.Create(iString + ".go")
 
 			if err != nil {
-				fmt.Println("file wasn't created!")
+				fmt.Println("file " + file.Name() + " wasn't created!")
 				return
 			}
 
