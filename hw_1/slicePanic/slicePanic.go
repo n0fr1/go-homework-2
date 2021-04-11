@@ -28,3 +28,14 @@ func RunPanic(index int) {
 	fmt.Println(slice[index])
 
 }
+
+func (e *ErrorTexTime) Error() string {
+	return fmt.Sprintf("Error %v at %v", e.text, e.time)
+}
+
+func New(text string) error {
+	return &ErrorTexTime{
+		text: text,
+		time: time.Now().Format(time.RFC3339),
+	}
+}

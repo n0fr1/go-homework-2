@@ -12,9 +12,10 @@ func main() {
 	slicePanic.RunPanic(10)
 	fmt.Println("Program continue...")
 
-	slicePanic.RunPanic(0)
-	fmt.Println("Program continue...")
+	//2. own error
+	err := slicePanic.New("some error")
+	fmt.Println(err)
 
-	//2. сreate 1 000 000 files
+	//3. сreate 1 000 000 files
 	createFiles.Newfiles()
 }
