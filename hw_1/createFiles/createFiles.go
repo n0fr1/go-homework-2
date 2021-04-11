@@ -17,6 +17,7 @@ func Newfiles() {
 
 			if err != nil {
 				fmt.Println("file wasn't created!")
+				return
 			}
 
 			defer file.Close()
