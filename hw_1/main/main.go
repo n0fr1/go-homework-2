@@ -10,11 +10,11 @@ func main() {
 
 	//1. panic - out of range
 	slicePanic.RunPanic(10)
-	fmt.Println("Program continue...")
+	fmt.Printf("%s\n", "Program continue...")
 
 	//2. own error
 	err := slicePanic.New("some error")
-	fmt.Println(err)
+	fmt.Printf("%v\n", err)
 
 	//3. сreate 1 000 000 files
 	createFiles.Newfiles()

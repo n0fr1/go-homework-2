@@ -19,7 +19,7 @@ func RunPanic(index int) {
 			var inf ErrorTexTime
 			inf.time = time.Now().Format(time.RFC3339)
 			inf.text = "slice - out of range"
-			log.Println("panic found:", inf.text, ":", inf.time)
+			log.Printf("panic found: %s, %v", inf.text, inf.time)
 		}
 
 	}()

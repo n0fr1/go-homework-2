@@ -8,14 +8,14 @@ import (
 
 func Newfiles() {
 
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 2; i++ {
 		func() {
 
 			iString := strconv.Itoa(i)
 			file, err := os.Create(iString + ".go")
 
 			if err != nil {
-				fmt.Println("file " + file.Name() + " wasn't created!")
+				fmt.Printf("file %s %s", file.Name(), " wasn't created!")
 				return
 			}
 
