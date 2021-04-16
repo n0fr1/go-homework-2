@@ -2,7 +2,6 @@ package slicePanic
 
 import (
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -16,10 +15,8 @@ func RunPanic(index int) {
 	defer func() { //catch error - out of range
 
 		if err := recover(); err != nil {
-			var inf ErrorTexTime
-			inf.time = time.Now().Format(time.RFC3339)
-			inf.text = "slice - out of range"
-			log.Printf("panic found: %s, %v", inf.text, inf.time)
+			getErr := New("slice - out of range")
+			fmt.Printf("%v\n", getErr)
 		}
 
 	}()
@@ -30,7 +27,7 @@ func RunPanic(index int) {
 }
 
 func (e *ErrorTexTime) Error() string {
-	return fmt.Sprintf("Error %v at %v", e.text, e.time)
+	return fmt.Sprintf("Error: %v at %v", e.text, e.time)
 }
 
 func New(text string) error {

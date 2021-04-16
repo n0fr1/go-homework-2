@@ -16,6 +16,6 @@ func main() {
 	err := slicePanic.New("some error")
 	fmt.Printf("%v\n", err)
 
-	//3. сreate 1 000 000 files
+	//3. сreate 5 files
 	createFiles.Newfiles()
 }
