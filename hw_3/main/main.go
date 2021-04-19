@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go-homework-level2/hw_3/createFiles"
-	"go-homework-level2/hw_3/slicePanic"
+
+	"github.com/n0fr1/go-homework-2/hw_3/bubblesort"
+	"github.com/n0fr1/go-homework-2/hw_3/slicePanic"
 )
 
 func main() {
@@ -16,6 +17,20 @@ func main() {
 	err := slicePanic.New("some error")
 	fmt.Printf("%v\n", err)
 
-	//3. сreate 5 files
-	createFiles.Newfiles()
+	//3. bubble sorting for slice
+	sortSlice()
+}
+
+func sortSlice() {
+
+	sliceNum := []int{22, -1, 6, 9, 10, 0, 4, 1, -3, 8, 7, 13, 48}
+
+	sortedSlice := bubblesort.Bubble(sliceNum)
+
+	fmt.Println("неотсортированный слайс: ")
+	fmt.Println(sliceNum)
+
+	fmt.Println("отсортированный слайс: ")
+	fmt.Println(sortedSlice)
+
 }
