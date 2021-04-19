@@ -1,7 +1,20 @@
 package bubblesort
 
+import "fmt"
+
+func SliceToSort() {
+
+	sliceNum := []int{22, -1, 6, 9, 10, 0, 4, 1, -3, 8, 7, 13, 48}
+
+	sortedSlice := Bubble(sliceNum)
+
+	fmt.Printf("%s %d \n", "unsorted slice: ", sliceNum)
+	fmt.Printf("%s %d", "sorted slice: ", sortedSlice)
+
+}
+
 //Bubble is slice-sorting function
-func Bubble(sliceNum []int) []int { //сортировка "пузырьком"
+func Bubble(sliceNum []int) []int {
 
 	var sliceSortNum = make([]int, len(sliceNum))
 	copy(sliceSortNum, sliceNum)
