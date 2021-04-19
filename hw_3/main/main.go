@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"go-homework-level2/hw_1/createFiles"
-	"go-homework-level2/hw_1/slicePanic"
+	"go-homework-level2/hw_3/createFiles"
+	"go-homework-level2/hw_3/slicePanic"
 )
 
 func main() {
